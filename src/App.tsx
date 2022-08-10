@@ -1,17 +1,23 @@
-import { useEffect, useState } from 'react'
-import { DarkApp } from './DarkApp'
-import { LightApp } from './LightApp'
+import React, { useEffect, useState } from 'react';
+import AppBar from './AppBar';
+import { DarkApp } from './world-clock/DarkApp';
+import { LightApp } from './world-clock/LightApp';
 
 const App = () => {
-  const [currentTime, setCurrentTime] = useState(Date.now())
+  const [darkMode, setDarkMode] = useState(false);
+
+  const [currentTime, setCurrentTime] = useState(Date.now());
   useEffect(() => {
-      const interval = setInterval(() => setCurrentTime(Date.now()), 1000);
-      return () => {
-          clearInterval(interval)
-      }
-  }, [])
-  const [darkMode, setDarkMode] = useState(false)
-  return <div onClick={() => setDarkMode(darkMode => !darkMode)}> {darkMode ? <DarkApp /> : <LightApp />}</div>
+    const interval = setInterval(() => setCurrentTime(Date.now()), 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return <div className='flex flex-col h-screen' style={{backgroundColor: darkMode ? '#171717': '#F5F5F5'}} >
+    <AppBar />
+    <div className='flex flex-col h-screen'  onClick={() => setDarkMode((_) => !_)}> {darkMode ? <DarkApp /> : <LightApp />}</div>;
+  </div>
 }
 
-export default App
+export default App;
