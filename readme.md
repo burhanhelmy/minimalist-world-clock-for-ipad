@@ -1,14 +1,18 @@
-Clone this repo and install all dependencies  
-`yarn` or `npm install`
+# minimalist-world-clock-for-ipad
+## ℹ️ Info
+- My personal clock for ipad
+## 📚 Stack
+- vite
+- react 
+- tailwind
 
-## Development
+## 🏃‍♂️ Get started
 
-`yarn dev` or `npm run dev`
+- In terminal run on project dir:
+> yarn
 
-## Build
+> npm run dev
 
-`yarn build` or `npm run build`
-
-## Publish
-
-`yarn dist` or `npm run dist`
+## Todo:
+- [ ] code cleanup?
+- [ ] build for electron

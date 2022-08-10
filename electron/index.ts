@@ -24,7 +24,7 @@ function createWindow() {
     show: true,
     resizable: true,
     fullscreenable: true,
-    icon: __dirname + '/Bluetooth.ico',
+    icon: join(__dirname, 'icon.ico') ,
     webPreferences: {
       preload: join(__dirname, 'preload.js')
     }
