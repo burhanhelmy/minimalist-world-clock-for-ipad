@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserWindow } from 'electron';
-import { getWindow } from '../electron';
 function AppBar() {
   const [isMaximize, setMaximize] = useState(false);
 
