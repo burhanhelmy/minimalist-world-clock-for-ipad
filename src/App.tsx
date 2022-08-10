@@ -14,7 +14,7 @@ const App = () => {
     };
   }, []);
 
-  return <div className='flex flex-col h-screen' style={{backgroundColor: darkMode ? '#171717': '#F5F5F5'}} >
+  return <div className='flex flex-col h-screen select-none' style={{backgroundColor: darkMode ? '#171717': '#F5F5F5'}} >
     <AppBar />
     <div className='flex flex-col h-screen'  onClick={() => setDarkMode((_) => !_)}> {darkMode ? <DarkApp /> : <LightApp />}</div>;
   </div>
