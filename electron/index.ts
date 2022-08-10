@@ -20,10 +20,11 @@ function createWindow() {
     width,
     height,
     //  change to false to use AppBar
-    frame: false,
+    frame: true,
     show: true,
     resizable: true,
     fullscreenable: true,
+    icon: __dirname + '/Bluetooth.ico',
     webPreferences: {
       preload: join(__dirname, 'preload.js')
     }
