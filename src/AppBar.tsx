@@ -35,11 +35,6 @@ function AppBar() {
     }
   }
 
-
-  // new BrowserWindow().on('leave-full-screen',()=>{
-
-  // })
-  
   const BarControlIcon = (props: BarControlIconProps) => {
     return <div onClick={() => props.onClick()} className="h-3 w-3 rounded-full ml-1 mr-1" style={{ backgroundColor: getBgColor(props.controlType) }} />
   }
