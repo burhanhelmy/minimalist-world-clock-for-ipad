@@ -13,7 +13,7 @@ const DarkClockContent = (props: { countryCode: CountryCode }) =>
         <div className='text-neutral-500 flex flex-row items-end text-8xl'> {(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: getTimeZone(props.countryCode) }))}</div>
     </div>
 
-export const LightApp = () => {
+export const DarkApp = () => {
     return (
         <div className="grid grid-cols-2 grow gap-4 place-content-stretch font-bold p-4">
             <DarkClockContent countryCode={CountryCode.MY} />
