@@ -1,51 +1,44 @@
 export enum CountryCode {
-    MY = "MY",
-    AUS = "AUS",
-    ID = "ID",
-    PH = "PH",
+  MY = 'MY',
+  AUS = 'AUS',
+  BRIS = 'BRIS'
 }
 
 export const getCountryColor = (countryCode: CountryCode) => {
-    switch (countryCode) {
-        case (CountryCode.MY):
-            return "bg-fuchsia-600"
-        case (CountryCode.AUS):
-            return "bg-sky-600"
-        case (CountryCode.ID):
-            return "bg-lime-600"
-        case (CountryCode.PH):
-            return "bg-orange-600"
-        default:
-            break;
-    }
-}
+  switch (countryCode) {
+    case CountryCode.MY:
+      return 'bg-fuchsia-600';
+    case CountryCode.AUS:
+      return 'bg-sky-600';
+    case CountryCode.BRIS:
+      return 'bg-yellow-600';
+    default:
+      return 'bg-gray-600';
+  }
+};
 
 export const getCountryTimeDiff = (countryCode: CountryCode) => {
-    switch (countryCode) {
-        case (CountryCode.MY):
-            return "+ 0H"
-        case (CountryCode.AUS):
-            return "+ 2H"
-        case (CountryCode.ID):
-            return "- 1H"
-        case (CountryCode.PH):
-            return "+ 0H"
-        default:
-            break;
-    }
-}
+  switch (countryCode) {
+    case CountryCode.MY:
+      return '+ 0H';
+    case CountryCode.AUS:
+      return '+ 2H/+ 3H (DST)';
+    case CountryCode.BRIS:
+      return '+ 2H';
+    default:
+      return 'N/A';
+  }
+};
 
 export const getTimeZone = (countryCode: CountryCode) => {
-    switch (countryCode) {
-        case (CountryCode.MY):
-            return 'Asia/Kuala_Lumpur'
-        case (CountryCode.AUS):
-            return 'Australia/Sydney'
-        case (CountryCode.ID):
-            return "Asia/Jakarta"
-        case (CountryCode.PH):
-            return 'Asia/Manila'
-        default:
-            break;
-    }
-}
+  switch (countryCode) {
+    case CountryCode.MY:
+      return 'Asia/Kuala_Lumpur';
+    case CountryCode.AUS:
+      return 'Australia/Sydney'; // DST aware
+    case CountryCode.BRIS:
+      return 'Australia/Brisbane'; // No DST
+    default:
+      return 'UTC';
+  }
+};

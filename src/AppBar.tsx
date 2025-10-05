@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 function AppBar() {
   const [isMaximize, setMaximize] = useState(false);
 
@@ -12,8 +13,8 @@ function AppBar() {
   };
 
   interface BarControlIconProps {
-    onClick: Function,
-    controlType: ControlType
+    onClick: Function;
+    controlType: ControlType;
   }
 
   enum ControlType {
@@ -25,24 +26,30 @@ function AppBar() {
   const getBgColor = (controlType: ControlType) => {
     switch (controlType) {
       case ControlType.close:
-        return '#FF3B30'
+        return '#FF3B30';
       case ControlType.expand:
-        return '#28CD41'
+        return '#28CD41';
       case ControlType.minimize:
-        return '#FFCC00'
+        return '#FFCC00';
       default:
-        return '#8E8E93'
+        return '#8E8E93';
     }
-  }
+  };
 
-  const BarControlIcon = (props: BarControlIconProps) => {
-    return <div onClick={() => props.onClick()} className="h-3 w-3 rounded-full ml-1 mr-1" style={{ backgroundColor: getBgColor(props.controlType) }} />
+  function BarControlIcon(props: BarControlIconProps) {
+    return (
+      <div
+        onClick={() => props.onClick()}
+        className="h-3 w-3 rounded-full ml-1 mr-1"
+        style={{ backgroundColor: getBgColor(props.controlType) }}
+      />
+    );
   }
   return (
     <div onDoubleClick={() => handleToggle()} className=" flex flex-row justify-start items-center p-2 draggable">
-        <BarControlIcon controlType={ControlType.close} onClick={window.Main.Close} />
-        <BarControlIcon controlType={ControlType.minimize} onClick={window.Main.Minimize} />
-        <BarControlIcon controlType={ControlType.expand} onClick={() => handleToggle()} />
+      <BarControlIcon controlType={ControlType.close} onClick={window.Main.Close} />
+      <BarControlIcon controlType={ControlType.minimize} onClick={window.Main.Minimize} />
+      <BarControlIcon controlType={ControlType.expand} onClick={() => handleToggle()} />
     </div>
   );
 }

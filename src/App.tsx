@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import AppBar from './AppBar';
-import { DarkApp } from './world-clock/DarkApp';
-import { LightApp } from './world-clock/LightApp';
+import DarkApp from './world-clock/DarkApp';
+import LightApp from './world-clock/LightApp';
 
-const App = () => {
+function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const [currentTime, setCurrentTime] = useState(Date.now());
@@ -14,7 +13,16 @@ const App = () => {
     };
   }, []);
 
-  return <div className='flex flex-col h-screen' style={{backgroundColor: darkMode ? '#171717': '#F5F5F5'}}   onClick={() => setDarkMode((_) => !_)}> {darkMode ? <DarkApp /> : <LightApp />}</div>;
+  return (
+    <div
+      className="flex flex-col h-screen"
+      style={{ backgroundColor: darkMode ? '#1A1A1A' : '#F5F5F5' }}
+      onClick={() => setDarkMode((_) => !_)}
+    >
+      {' '}
+      {darkMode ? <DarkApp /> : <LightApp />}
+    </div>
+  );
 }
 
 export default App;
